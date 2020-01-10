@@ -21,6 +21,59 @@ public:
 	bool setSalery(int);
 };
 
+void add_data();
+
+void display_data();
+
+void increase_salary();
+
+fstream employee_database;
+
+int main()
+{
+	//opening file...
+
+	//menu
+	bool menu = true;
+	char controll_flag;
+	int menu_selection = 0;
+	do
+	{
+		cout << "ENTER CHOICE:" << endl;
+		cout << "\t1. ADD EMPLOYEE DATA:" << endl;
+		cout << "\t2. DISPLAY FILE DATA:" << endl;
+		cout << "\t3. INCREASE EMPLOYEE SALARY:" << endl;
+		cout << "Make a choice: ";
+		cin >> menu_selection;
+		cout << endl;
+
+		switch (menu_selection)
+		{
+		case 1:
+			add_data();
+			break;
+		case 2:
+			display_data();
+			break;
+		case 3:
+			increase_salary();
+			break;
+		default:
+			cout << "Incorrect Item. Please Try again." << endl << endl;
+		}
+		cout << "Do you want to continue? : ";
+		cin >> controll_flag;
+		cout << endl;
+		if (controll_flag != 'y')
+		{
+			menu = false;
+		}
+	}
+	while (menu);
+    return 0;
+}
+
+
 employee::employee()
 {
 }
@@ -64,10 +117,16 @@ bool employee::setSalery(int s)
 	return false;
 }
 
-int main()
+void add_data()
 {
-	fstream employeedata;
-    return 0;
+}
+
+void display_data()
+{
+}
+
+void increase_salary()
+{
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
